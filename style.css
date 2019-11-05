@@ -7,6 +7,15 @@ body{
 }
 
 
+.container{
+    height: 100vh;
+}
+
+/**************************************\\\\\\\\\\\\  HEADER MOBILE  ///////////*********************************/
+
+
+
+
 header{
     align-items: center;
     background: #659DBD;
@@ -15,6 +24,9 @@ header{
     justify-content: center;
     color: white;
 }
+
+
+/**************************************\\\\\\\\\\\\  SEARCH BAR MOBILE  ///////////*********************************/
 
 
 #searchIng{
@@ -77,8 +89,11 @@ header{
 }
 
 
+/**************************************\\\\\\\\\\\\  INTRO MOBILE  ///////////*********************************/
+
+
 #introContainer{
-    height: 60vh;
+    min-height: 60vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -90,6 +105,9 @@ header{
     margin: 15px;
     font-size: 22px;
 }
+
+
+/**************************************\\\\\\\\\\\\  MAP RESULT MOBILE  ///////////*********************************/
 
 
 .mapResult, .results{
@@ -144,6 +162,10 @@ h2{
 
 @media only screen and (min-width: 600px) {
 
+
+    /**************************************\\\\\\\\\\\\  HEADER TABLET  ///////////*********************************/
+
+
     header {
         align-items: center;
         background: #659DBD;
@@ -158,6 +180,9 @@ h2{
     }
 
 
+    /**************************************\\\\\\\\\\\\  SEARCH BAR TABLET  ///////////*********************************/
+
+
     #searchIng {
         border: 1px #dfe1e5 solid;
         width: 55%;
@@ -168,6 +193,9 @@ h2{
         background-color: white;
         display: flex;
     }
+
+
+    /**************************************\\\\\\\\\\\\  CONTAINERS TABLET  ///////////*********************************/
 
 
     #intro {
@@ -212,6 +240,10 @@ h2{
 
 @media only screen and (min-width: 1000px) {
 
+
+    /**************************************\\\\\\\\\\\\  HEADER BIG  ///////////*********************************/
+
+
     header {
         align-items: center;
         background: #659DBD;
@@ -225,6 +257,9 @@ h2{
     h1{
         font-size: 36px;
     }
+
+
+    /**************************************\\\\\\\\\\\\  SEARCH BAR BIG  ///////////*********************************/
 
 
     #searchIng {
@@ -272,6 +307,10 @@ h2{
         border: 0;
         margin-bottom: 1em;
     }
+
+
+    /**************************************\\\\\\\\\\\\  CONTAINERS  ///////////*********************************/
+
 
     .introContainer {
         display: flex;
@@ -323,21 +362,4 @@ h2{
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
