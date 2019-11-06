@@ -191,7 +191,7 @@ function getCamp(lat,long) {
         })
         .then(responseJson => displayCamp(responseJson)) // print to DOM
         .catch(error => {
-            $('.apiError').text('Campgrounds is broken.')
+            $(alert).text('Campgrounds is broken.')
         });
 }
 
@@ -216,7 +216,7 @@ function getTrail(lat,long) {
         })
         .then(responseJson => displayTrail(responseJson)) // print to DOM
         .catch(error => {
-            $('.apiError').text('Trails is broken.')
+            $(alert).text('Trails is broken.')
         });
 }
 
@@ -255,7 +255,7 @@ function geoCode(city,state) {
         })
         .then(responseJson => geoDegree(responseJson))
         .catch(error => {
-            $('.apiError').text(`Google Geo error message: ${error.message}.`)
+            $(alert).text(`Google Geo error message: ${error.message}.`)
         });
 }
 
