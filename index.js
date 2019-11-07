@@ -114,18 +114,17 @@ function trailsLocArr(trailsLocRei) {
 // printing Camp site results to DOM List
 function displayCamp(campLoc) {
     $('.apiError').empty();
-    $('.resultsList').empty();
 
     if(campLoc.campgrounds.length >= 1){
-        $('.results').append(`<h2>Camp Sites</h2>`);
+        $('#campResultsList').append(`<h2>Camp Sites</h2>`);
 
     }else{
-        console.log("No Campsites Found.");
+        $('#campResultsList').append(`<h4>No Campsites found in the area <br> Try Expanding your search.</h4>`);
     }
 
 
         for (let i = 0; i < campLoc.campgrounds.length; i++) {
-            $('.results').append(`
+            $('#campResultsList').append(`
         <li><h3><a href="${campLoc.campgrounds[i].url}">${campLoc.campgrounds[i].name}</a></h3>
         <img src="${campLoc.campgrounds[i].imgUrl}" alt="campsite picture" id="imageDetails" height="100" width="100">
         <section class="listings">
@@ -133,10 +132,8 @@ function displayCamp(campLoc) {
         <p id="details">Location: ${campLoc.campgrounds[i].latitude}, ${campLoc.campgrounds[i].longitude} </p>
         </section>
         </li>`)
-            console.log('displayCamp Ran');
         }
 
-        $('.results, .mapResult').removeClass('hidden');
         $(campLocArr(campLoc));
 }
 
@@ -147,12 +144,16 @@ function displayCamp(campLoc) {
 //Trails flow
 function displayTrail(trailsLoc) {
     $('.apiError').empty();
-    $('.trailsList').empty();
 
-    $('.results').append(`<h2>Trail Locations</h2>`);
+    if(trailsLoc.trails.length >= 1){
+        $('#trailResultsList').append(`<h2>Trail Locations</h2>`);
+
+    }else{
+        $('#trailResultsList').append(`<h4>No trails found in the  area <br> Try Expanding your search.</h4>`);
+    }
 
     for (let i = 0; i < trailsLoc.trails.length; i++) {
-        $('.results').append(`
+        $('#trailResultsList').append(`
         <li><h3><a href="${trailsLoc.trails[i].url}">${trailsLoc.trails[i].name}</a></h3>
         <img src="${trailsLoc.trails[i].imgSmall}" alt="trail picture" id="imageDetails" height="100" width="100">
         <section class="listings">
@@ -162,10 +163,8 @@ function displayTrail(trailsLoc) {
         <p id="details">Stars: ${trailsLoc.trails[i].stars}</p>
         </section>
         </li>`)
-        console.log('displayTrail Ran at display trail function');
     }
 
-    $('.results, .mapResult').removeClass('hidden');
     $(trailsLocArr(trailsLoc));
 }
 
@@ -229,13 +228,38 @@ function geoDegree(responseJson) {
     var coorLng = responseJson.results[0].geometry.location.lng; /* line 33,34 pulling separately
      because the REI API accepts a different format of Lat and Long than what google API provides */
 
+
     mapCenterLat = coorLat; // write to global var to carry to center the map
     mapCenterLng = coorLng; // write to global var to carry to center the map
 
 
-    getCamp(coorLat, coorLng); // Sending coordinates to REI endpoint for camping spots
-    getTrail(coorLat,coorLng); // Sending coordinates to REI endpoint for trail
+    // getCamp(coorLat, coorLng); // Sending coordinates to REI endpoint for camping spots
+    // getTrail(coorLat,coorLng); // Sending coordinates to REI endpoint for trail
+
+
+    if ($('input[name="checkCamp"]').is(':checked') && $('input[name="checkTrail"]').is(':checked')) {
+        $('#trailResultsList').empty();
+        $('#campResultsList').empty();
+        $('.trailResults, .campResults .mapResult').removeClass('hidden');
+        getCamp(coorLat, coorLng); // Sending coordinates to REI endpoint for camping spots
+        getTrail(coorLat,coorLng); // Sending coordinates to REI endpoint for trail
+
+    } else if ($('input[name="checkTrail"]').is(':checked')) {
+        $('#trailResultsList').empty();
+        $('.trailResults, .mapResult').removeClass('hidden');
+        getTrail(coorLat,coorLng);
+
+    } else if ($('input[name="checkCamp"]').is(':checked')){
+        $('#campResultsList').empty();
+        $('.campResults, .mapResult').removeClass('hidden');
+        getCamp(coorLat, coorLng);
+
+    }else {
+        alert('Please select the check box for campsites, trails, or both.');
+    }
+
 }
+
 
 
 
@@ -268,8 +292,8 @@ function empty(){
     trailsArray = [];
     trailsInfo = [];
     $('.apiError').empty();
-    $('.resultsList').empty();
-    $('.results').empty();
+    $('#trailResultsList').empty();
+    $('#campResultsList').empty();
 }
 
 
@@ -285,6 +309,7 @@ function start() {
         maxResult = $('#maxHit').val(); // stored to global
         $(empty());
         $('#introContainer').hide();
+        $('.mapResult').removeClass('hidden');
 
         geoCode(city,state);
     })

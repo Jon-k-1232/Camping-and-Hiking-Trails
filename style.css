@@ -89,6 +89,31 @@ header{
 }
 
 
+/**************************************\\\\\\\\\\\\  OPTIONS MOBILE  ///////////*********************************/
+
+
+.boxOptions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    background: #ddd;
+    border: 0;
+    margin-bottom: 1em;
+}
+
+
+label{
+    margin: 0em 2em 0em 0em;
+}
+
+
+#checkTrail, #checkCamp{
+    height: 1.7em;
+    width: 1.7em;
+}
+
+
 /**************************************\\\\\\\\\\\\  INTRO MOBILE  ///////////*********************************/
 
 
@@ -96,6 +121,7 @@ header{
     min-height: 60vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -103,14 +129,14 @@ header{
 #intro {
     text-align: center;
     margin: 15px;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 
 /**************************************\\\\\\\\\\\\  MAP RESULT MOBILE  ///////////*********************************/
 
 
-.mapResult, .results{
+.mapResult, #trailResultsList, #campResultsList{
     list-style: none;
 }
 
@@ -120,7 +146,7 @@ header{
 }
 
 
-.results{
+.trailResults, .campResults{
     margin: 1em;
 }
 
@@ -300,8 +326,16 @@ h2{
     }
 
 
-    #maxHit, #radius, #states {
+    #maxHit, #radius, #states{
         width: 6.4em;
+        font-size: 20px;
+        background: #ddd;
+        border: 0;
+        margin-bottom: 1em;
+    }
+
+
+    .boxOptions{
         font-size: 20px;
         background: #ddd;
         border: 0;
@@ -337,7 +371,7 @@ h2{
     }
 
 
-    .results{
+    .trailResults, .campResults{
         margin: 2em;
     }
 

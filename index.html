@@ -110,20 +110,33 @@
                 </form>
             </section>
 
+            <section class="boxOptions">
+                <input id="checkCamp" name="checkCamp" type="checkbox" value="campSpot">
+                <label for="checkCamp">Campsites</label>
+
+                <input id="checkTrail" name="checkTrail" type="checkbox" value="trailSpot">
+                <label for="checkTrail">Trails</label>
+            </section>
+
 
             <section id="mapContainer">
             <div id="map" class="mapResult hidden"></div>
             </section>
 
 
-            <section class="results hidden" role="region">
-                <ul class="resultsList"></ul>
+            <section class="trailResults hidden" role="region">
+                <ul id="trailResultsList"></ul>
+            </section>
+
+
+            <section class="campResults hidden" role="region">
+                <ul id="campResultsList"></ul>
             </section>
 
 
             <section id="introContainer">
-                <p id="intro">Hey there! <br> Input your city, state, the desired search radius, and how ever
-                    many locations you want to explore. Your next adventure is around the corner!</p>
+                <p id="intro">Hey there! <br> Looking for a new hiking trail or campsite? Start your search above
+                    and find your next adventure!</p>
             </section>
 
 
