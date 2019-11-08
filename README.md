@@ -13,8 +13,8 @@ HTML,
 CSS3,
 JavaScript,
 jQuery,
-Google geo,
-Google maps/markers,
+Google geo API,
+Google maps API,
 REI hiking project API
 
 
