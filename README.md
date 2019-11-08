@@ -17,15 +17,25 @@ REI hiking project API
 
 
 Landing Page:
+
 ![Repo List](images/Landing.png)
 
+
+
 Campspots Only:
+
 ![Repo List](images/Camp_Spots.png)
 
+
+
 Trails Only:
+
 ![Repo List](images/Trails.png)
 
+
+
 Trails and camping spots:
+
 ![Repo List](images/Camp_and_Trail.png)
 
 
