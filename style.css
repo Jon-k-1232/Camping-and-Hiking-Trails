@@ -35,14 +35,12 @@ header{
     text-align: center;
     border-radius: 31px;
     margin: 1em auto 1em;
-    height: 3em;
     background-color: white;
     display: flex;
 }
 
 
 #userForm{
-    height: 95%;
     width: 100%;
     text-align: center;
     border: 0;
@@ -54,7 +52,6 @@ header{
 .clack{
     float: right;
     background-color: #0b7dda;
-    height: 48px;
     width: 5em;
     border-radius: 0px 24px 25px 0px;
     border: 0;
