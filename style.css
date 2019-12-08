@@ -212,7 +212,6 @@ h2{
         text-align: center;
         border-radius: 31px;
         margin: 1em auto 1em;
-        height: 2.7em;
         background-color: white;
         display: flex;
     }
@@ -241,7 +240,7 @@ h2{
     .clack {
         float: right;
         background-color: #0b7dda;
-        height: 43px;
+
         width: 5em;
         border-radius: 0px 30px 30px 0px;
         border: 0;
